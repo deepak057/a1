@@ -1,215 +1,120 @@
 <html>
-
-<head>
-	
-	<title>
-		
-		A1
-
-	</title>
-
-<script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-</head>	
-
-
-<body ng-app="todo-app">
-
-
-<header>
-
-<nav class="navbar navbar-inverse">
-	
-	<div class="container-fluid">
-		
-		<div class="navbar-header">
-
-			<a href="#" class="navbar-brand">A1</a>
-
-		</div>
-
-		<ul class="nav navbar-nav">
-			
-		<li class="active"><a href="#">Home</a></li>
-		<li><a href="#">Item 1</a></li>
-		<li><a href="#">Item 2 </a></li>
-
-		</ul>
-
-
-		<form class="navbar-form navbar-left">
-
-		<div class="form-group">
-			
-			<input type="text" class="form-control" placeholder="Text here" />
-
-		</div>
-
-		<button type="submit" class="btn btn-default">Search</button>
-
-		</form>
-
-
-
-	</div>
-
-
-</nav>
-	
-</header>
-
-
-
-	
-	<div class="container"  ng-controller="todoCtrl">
-		
-		
-		<div class="panel panel-default">
-
-		<div class="panel-heading">
-
-		<div class="row">
-			
-			<div class="col-md-6">Items</div>
-			<div class="col-md-6 text-right">
-				
-					<button data-toggle="modal" data-target="#myModal" title="Add a new item" class="btn btn-sm btn-circle btn-success"><span class="glyphicon glyphicon-plus"></span></button>
-	
-			</div>
-
-		</div>
-
-
-		</div>
-
-
-		<div class="panel-body">
-
-		<div class="list-group" ng-repeat="todo in todos track by $index">
-			
-			<a ng-click="remove(todo)" title="Click to remove this item" href="#" class="list-group-item">
-				{{todo}}
-			</a>
-
-		</div>
-
-
-
-		</div>
-
-
-
-		</div>
-
-
-
-
-
-
-
-
-
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add Item</h4>
+   <head>
+      <title>
+         A1
+      </title>
+      <script
+         src="https://code.jquery.com/jquery-2.2.4.min.js"
+         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+         crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   </head>
+   <body ng-app="todo-app">
+      <header>
+         <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a href="#" class="navbar-brand">A1</a>
+               </div>
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2 </a></li>
+               </ul>
+               <form class="navbar-form navbar-left">
+                  <div class="form-group">
+                     <input type="text" class="form-control" placeholder="Text here" />
+                  </div>
+                  <button type="submit" class="btn btn-default">Search</button>
+               </form>
+            </div>
+         </nav>
+      </header>
+      <div class="container"  ng-controller="todoCtrl">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <div class="row">
+                  <div class="col-md-6">Items</div>
+                  <div class="col-md-6 text-right">
+                     <button data-toggle="modal" data-target="#myModal" title="Add a new item" class="btn btn-sm btn-circle btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div>
+               </div>
+            </div>
+            <div class="panel-body">
+               <div class="list-group" ng-repeat="todo in todos track by $index">
+                  <a ng-click="remove(todo)" title="Click to remove this item" href="#" class="list-group-item">
+                  {{todo}}
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- Modal -->
+         <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+               <!-- Modal content-->
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Add Item</h4>
+                  </div>
+                  <div class="modal-body">
+                     <form>
+                        <div class="form-group">
+                           <label for="new-item">Item:</label>
+                           <input id="new-item" type="text" ng-model="new_item" class="form-control"  placeholder="Enter text">
+                        </div>
+                        <button type="submit" ng-click="save_item()" class="btn btn-sm btn-success">Submit</button>
+                     </form>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-      <div class="modal-body">
-
-        
-         <form>
-    <div class="form-group">
-      <label for="new-item">Item:</label>
-      <input id="new-item" type="text" ng-model="new_item" class="form-control"  placeholder="Enter text">
-    </div>
-    
-    <button type="submit" ng-click="save_item()" class="btn btn-sm btn-success">Submit</button>
-  </form>
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-
-	</div>
-
-
-
-
-
-
-
-
-
-
-</body>
-
-<script type="text/javascript">
-	
-	var app=angular.module('todo-app',[]);
-
-	app.controller("todoCtrl",function($scope){
-
-		$scope.todos=[
-
-		'Item 1',
-		'Item 2',
-		'Item 3'
-
-		];
-
-		$scope.remove=function(todo){
-
-			var indexOf= $scope.todos.indexOf(todo);
-
-				if(indexOf !==-1){
-
-					$scope.todos.splice(indexOf,1);
-				}
-
-			
-		};
-
-		$scope.save_item=function(){
-
-			if($scope.new_item.length){	
-
-			$scope.todos.push($scope.new_item);
-			$scope.new_item="";
-
-		}
-		
-		}
-
-
-	});
-
-</script>
-
-
+   </body>
+   <script type="text/javascript">
+      var app=angular.module('todo-app',[]);
+      
+      app.controller("todoCtrl",function($scope){
+      
+      	$scope.todos=[
+      
+      	'Item 1',
+      	'Item 2',
+      	'Item 3'
+      
+      	];
+      
+      	$scope.remove=function(todo){
+      
+      		var indexOf= $scope.todos.indexOf(todo);
+      
+      			if(indexOf !==-1){
+      
+      				$scope.todos.splice(indexOf,1);
+      			}
+      
+      		
+      	};
+      
+      	$scope.save_item=function(){
+      
+      		if($scope.new_item.length){	
+      
+      		$scope.todos.push($scope.new_item);
+      		$scope.new_item="";
+      
+      	}
+      	
+      	}
+      
+      
+      });
+      
+   </script>
 </html>
+
